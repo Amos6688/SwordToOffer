@@ -12,8 +12,8 @@ import java.util.TreeSet;
  */
 public class StringCombination
 {
-    ArrayList<String> result = new ArrayList<>();
-    TreeSet<String> set = new TreeSet<>();
+    private ArrayList<String> result = new ArrayList<>();
+    private TreeSet<String> set = new TreeSet<>();
 
     public ArrayList<String> Combination(String str)
     {
