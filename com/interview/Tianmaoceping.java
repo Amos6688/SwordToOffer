@@ -6,7 +6,7 @@ import java.util.List;
 public class Tianmaoceping
 {
     private ArrayList<Integer> list = new ArrayList<>();
-    private int minSum;
+    private static int minSum = Integer.MAX_VALUE;
 
     public void combinationCore(int[] a, int[] b, int aStart, int bStart, int length, ArrayList<Integer> list)
     {
@@ -44,16 +44,20 @@ public class Tianmaoceping
 
     private void computeMinSum(List<Integer> list)
     {
+        int sum = 0;
         for (int i = 0; i <list.size() - 1; i += 2)
         {
-            minSum += list.get(i) * list.get(i + 1);
+            sum += list.get(i) * list.get(i + 1);
         }
+        if (sum < minSum)
+            minSum = sum;
     }
 
     public static void main(String[] args)
     {
         int[] a = {1, 2, 3};
         int[] b = {4, 5, 6};
+
 
         Tianmaoceping tianmaoceping = new Tianmaoceping();
         tianmaoceping.combinationCore(a, b, 0, 0, a.length, tianmaoceping.list);
