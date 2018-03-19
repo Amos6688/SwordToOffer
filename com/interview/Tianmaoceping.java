@@ -5,24 +5,24 @@ import java.util.List;
 
 public class Tianmaoceping
 {
-    private ArrayList<Integer> list = new ArrayList<>();
+    private static ArrayList<Integer> list = new ArrayList<>();
     private static int minSum = Integer.MAX_VALUE;
 
     public void combinationCore(int[] a, int[] b, int aStart, int bStart, int length, ArrayList<Integer> list)
     {
-        ArrayList<Integer> result = new ArrayList<>(list);
-        if(aStart  == length)
-        {
-            while (bStart < length)
-                result.add(b[bStart++]);
-            printList(result);
-            computeMinSum(result);
+        if (a.length != b.length || length <= 0)
             return;
-        }
-        if (bStart == length)
+
+        ArrayList<Integer> result = new ArrayList<>(list);
+
+        if(aStart  == length || bStart == length)
         {
             while (aStart < length)
                 result.add(a[aStart++]);
+
+            while (bStart < length)
+                result.add(b[bStart++]);
+
             printList(result);
             computeMinSum(result);
             return;
@@ -42,6 +42,7 @@ public class Tianmaoceping
         System.out.println( );
     }
 
+    //求最小值
     private void computeMinSum(List<Integer> list)
     {
         int sum = 0;
@@ -58,9 +59,8 @@ public class Tianmaoceping
         int[] a = {1, 2, 3};
         int[] b = {4, 5, 6};
 
-
         Tianmaoceping tianmaoceping = new Tianmaoceping();
-        tianmaoceping.combinationCore(a, b, 0, 0, a.length, tianmaoceping.list);
+        tianmaoceping.combinationCore(a, b, 0, 0, a.length, list);
 
         System.out.println("最小和为" + tianmaoceping.minSum);
     }
