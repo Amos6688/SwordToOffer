@@ -97,13 +97,16 @@ public class MoreThanHalfNum
         int small = start - 1;
         for (index = start; index < end; ++index)
         {
-            ++small;
             if (data[index] < data[end])
-                swap(data, index, end);
+            {
+                ++small;
+                if(small != index)
+                    swap(data, index, small);
+            }
         }
 
         ++ small;
-        swap(data, index, end);
+        swap(data, small, end);
 
         return small;
     }
