@@ -39,7 +39,7 @@ public class QuickSort
             array[high] = array[low];
         }
 
-        //扫描完成，记得将转轴归为
+        //扫描完成，记得将转轴归位
         array[low] = pivot;
 
         return low;
