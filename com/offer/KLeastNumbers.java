@@ -44,18 +44,18 @@ public class KLeastNumbers
 
         int start = 0;
         int end = length - 1;
-        int index = partition(input, length, start, end);
+        int index = partition(input, start, end);
         if (index != k - 1)
         {
             if (index > k -1)
             {
                 end = index - 1;
-                index = partition(input, length, start, end);
+                index = partition(input, start, end);
             }
             else
             {
                 start = index + 1;
-                index = partition(input, length, start, end);
+                index = partition(input, start, end);
             }
         }
 
@@ -65,32 +65,26 @@ public class KLeastNumbers
     }
 
 
-    private int partition(int[] array, int length, int start, int end) throws Exception {
-        if (array == null || length <= 0 || start < 0 || end >= length)
-            throw new Exception("Invalid Parameter");
+    private int partition(int[] array, int low, int high)
+    {
 
-        Random random = new Random();
-        int index = random.nextInt(length);
-        swap(array, index, end);
+        int pivot = array[low];
 
-        int small = start - 1;
-        for (index = start; index < end; ++index) {
-            if (array[index] < array[end]) {
-                ++small;
-                if (small != index)
-                    swap(array, small, index);
-            }
+        //扫描一遍数组
+        while (low < high)
+        {
+            while (low < high && array[high] >= pivot)
+                high--;
+            array[low] = array[high];
+
+            while (low < high && array[low] <= pivot)
+                low++;
+            array[high] = array[low];
         }
 
-        ++small;
-        swap(array, small, end);
+        //扫描完成，记得将转轴归位
+        array[low] = pivot;
 
-        return small;
-    }
-
-    private void swap(int[] data, int index, int end) {
-        int temp = data[index];
-        data[index] = data[end];
-        data[end] = temp;
+        return low;
     }
 }
