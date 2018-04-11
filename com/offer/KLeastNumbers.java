@@ -1,10 +1,9 @@
 package com.offer;
 
 import java.util.Collections;
-import java.util.Random;
 import java.util.ArrayList;
 
-public class KLeastNumbers
+public class  KLeastNumbers
 {
     public static void main(String[] args)
     {
