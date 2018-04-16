@@ -9,16 +9,16 @@ import java.util.Map;
  *
  *  @author chuan
  */
-public class Q35Ralation1
+public class Q35Relation1
 {
     public static void main(String[] args)
     {
-        Q35Ralation1 ralation1 = new Q35Ralation1();
+        Q35Relation1 relation1 = new Q35Relation1();
 
         String str1 = "we are students";
         String str2 = "aeiou";
 
-        ralation1.solution(str1, str2);
+        relation1.solution(str1, str2);
     }
 
     /**
