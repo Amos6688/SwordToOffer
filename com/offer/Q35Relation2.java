@@ -1,9 +1,7 @@
 package com.offer;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * 剑指offer面试题35 相关题目2
@@ -11,13 +9,13 @@ import java.util.Set;
  *
  * @author chuan
  */
-public class Q35Ralation2
+public class Q35Relation2
 {
     public static void main(String[] args)
     {
-        Q35Ralation2 ralation2 = new Q35Ralation2();
+        Q35Relation2 relation2 = new Q35Relation2();
         String str = "google";
-        ralation2.solution(str);
+        relation2.solution(str);
 
     }
 
