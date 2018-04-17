@@ -83,7 +83,6 @@ public class InversePairs_36
 
         //对子数组排序，以免在以后的统计过程中重复统计
         System.arraycopy(copy, start, data, start, end - start + 1);
-
         return (left + right + count) % 1000000007;
     }
 }
