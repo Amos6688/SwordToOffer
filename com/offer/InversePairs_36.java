@@ -28,17 +28,16 @@ public class InversePairs_36
      */
     public int InversePairs(int [] array)
     {
-        if (array == null || array.length < 0)
+        if (array == null || array.length <= 0)
         {
             return 0;
         }
         int[] copy = new int[array.length];
 
-        int count = inverseParisCore(array, copy, 0, array.length - 1);
-        return count;
+        return inverseParisCore(array, copy, 0, array.length - 1);
     }
 
-    public int inverseParisCore(int[] data, int[] copy, int start, int end)
+    private int inverseParisCore(int[] data, int[] copy, int start, int end)
     {
         if (start == end)
         {
@@ -77,16 +76,13 @@ public class InversePairs_36
         {
             copy[indexCopy--] = data[i];
         }
-
         for (; j >= mid + 1; --j)
         {
             copy[indexCopy--] = data[j];
         }
 
         //对子数组排序，以免在以后的统计过程中重复统计
-        for(int k = start; k <= end; ++k) {
-            data[k] = copy[k];
-        }
+        System.arraycopy(copy, start, data, start, end - start + 1);
 
         return (left + right + count) % 1000000007;
     }
