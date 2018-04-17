@@ -33,10 +33,6 @@ public class InversePairs_36
             return 0;
         }
         int[] copy = new int[array.length];
-        for(int i = 0; i < array.length; ++i)
-        {
-            copy[i] = array[i];
-        }
 
         int count = inverseParisCore(array, copy, 0, array.length - 1);
         return count;
