@@ -1,7 +1,6 @@
 package com.offer;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 剑指offer 面试题41
