@@ -67,7 +67,7 @@ public class ReverseWordsInSentence_42_1
      * @param begin 翻转的起始位置
      * @param end 翻转的终止位置
      */
-    private void reverse(char[] chars, int begin, int end)
+    public static void reverse(char[] chars, int begin, int end)
     {
         if (begin > end || begin < 0 || end >= chars.length)
             return;
