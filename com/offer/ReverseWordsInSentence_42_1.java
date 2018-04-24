@@ -83,8 +83,8 @@ public class ReverseWordsInSentence_42_1
 
     /**
      * 解法2
-     * @param str
-     * @return
+     * @param str 需要翻转的句子
+     * @return 返回翻转完毕的句子
      */
     public String ReverseSentence(String str)
     {
