@@ -9,6 +9,83 @@ package com.offer;
  */
 public class ReverseWordsInSentence_42_1
 {
+    /**
+     * 翻转句子，解法1
+     * @param str 需要翻转的句子
+     * @return 返回翻转完毕的句子
+     */
+    public String ReverseSentence2(String str)
+    {
+        if (str == null)
+            return null;
+        if (str.trim().equals(""))
+            return str;
+
+        char[] chars = str.toCharArray();
+        int begin = 0;
+        int end = chars.length - 1;
+
+        //翻转整个句子
+        reverse(chars, begin, end);
+
+        //翻转每个单词
+        begin = end = 0;
+        while (begin != chars.length - 1)
+        {
+            //空格不用翻转
+            if (chars[begin] == ' ')
+            {
+                ++begin;
+                ++end;
+            }
+            else if (chars[end] == ' ')
+            {
+                reverse(chars, begin, --end);
+                begin = ++end;
+            }
+            /**
+             * 注意此处与书上不一样，因为C++中字符串默认是以'\0'结尾的，
+             * 而Java中不是。
+             */
+            else if (end == chars.length - 1)
+            {
+                reverse(chars, begin, end);
+                begin = end;
+            }
+            else
+                ++end;
+        }
+
+        return new String(chars);
+    }
+
+    /**
+     * 将chars数组从begin 到end 翻转，
+     * @param chars 需要翻转的字符数组
+     * @param begin 翻转的起始位置
+     * @param end 翻转的终止位置
+     */
+    public void reverse(char[] chars, int begin, int end)
+    {
+        if (begin > end || begin < 0 || end >= chars.length)
+            return;
+
+        while (begin < end)
+        {
+            char temp = chars[begin];
+            chars[begin] = chars[end];
+            chars[end] = temp;
+            ++begin;
+            --end;
+        }
+    }
+
+
+    /**
+     * 解法2
+     * @param str
+     * @return
+     */
     public String ReverseSentence(String str)
     {
         if (str == null)
