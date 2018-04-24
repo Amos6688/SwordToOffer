@@ -11,6 +11,8 @@ public class ReverseWordsInSentence_42_1
 {
     /**
      * 翻转句子，解法1
+     * 解题思路：先将整个句子翻转，然后再逐个将翻转后句子中的每个单词翻转
+     *
      * @param str 需要翻转的句子
      * @return 返回翻转完毕的句子
      */
@@ -65,7 +67,7 @@ public class ReverseWordsInSentence_42_1
      * @param begin 翻转的起始位置
      * @param end 翻转的终止位置
      */
-    public void reverse(char[] chars, int begin, int end)
+    private void reverse(char[] chars, int begin, int end)
     {
         if (begin > end || begin < 0 || end >= chars.length)
             return;
