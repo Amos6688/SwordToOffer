@@ -21,9 +21,6 @@ public class ContinousCards_44
         //对数组进行排序
         Arrays.sort(numbers);
 
-        for (int i : numbers)
-            System.out.print(i + " ");
-
         int numberOfZero = 0;
         int numberOfGap = 0;
 
