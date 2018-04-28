@@ -23,7 +23,7 @@ public class DuplicationInArray_51
         if (numbers == null || length <= 0)
             return false;
 
-        //遍历一遍数组，查看是否又不符合要求的元素.即小于0或者大于length - 1
+        //遍历一遍数组，查看是否有不符合要求的元素.即小于0或者大于length - 1
         for (int i = 0; i < length; ++i )
         {
             if (numbers[i] < 0 || numbers[i] > length - 1)
