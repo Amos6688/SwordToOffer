@@ -8,7 +8,7 @@ package com.offer;
  *
  * 解题思路：三种方法，推荐第一种方法
  */
-public class NumericStrings_53
+public class NumericStrings_54
 {
     private int index;
 
