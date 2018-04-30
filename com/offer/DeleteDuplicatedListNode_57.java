@@ -53,6 +53,6 @@ public class DeleteDuplicatedListNode_57
             }
         }
 
-        return pHead;
+        return pHead;   //返回头结点
     }
 }
