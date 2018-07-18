@@ -27,7 +27,7 @@ public class ConstructBinaryTree
         {
            if (in[i] == root.val)
            {
-               //注意下标的确定
+               //注意下标的确定    
                root.left = constructCore(pre, in, preStart + 1, preStart + (i - inStart), inStart, i - 1);
                root.right = constructCore(pre, in, preStart + (i - inStart) + 1, preEnd, i + 1, inEnd);
            }
