@@ -2,26 +2,39 @@ package com.sort;
 
 /**
  * 插入排序
+ * 基本思想：对于给定的一组记录，初始是假设第一个记录自称一个有序序列，其余记录为无序序列。
+ * 接着从第二个记录开始，按照记录的大小依次将当前处理的记录插入到其之前的有序序列中，
+ * 直到最后一个记录插入到有序序列中为止
+ *
+ * @author Chuan
  */
 public class InsertSort
 {
-    public static <T extends Comparable<? super T>> void insertSort(T[] a)
+    public static  void insertSort(int[] a)
     {
-        for (int p = 1; p < a.length; ++p)
+        if (a != null)
         {
-            T tmp = a[p];   //保存当前位置p的元素，其中[0,p-1]已经有序
-            int j;
-            for (j = p; j > 0 && tmp.compareTo(a[j - 1]) < 0; --j)
+            int temp , j;
+            for (int i = 1; i < a.length; ++i)
             {
-                a[j] = a[j - 1];    //后移一位
+                temp = a[i];
+                j = i;
+                if (a[j - 1] > temp)
+                {
+                    while (j >= 1 && a[j - 1] > temp)
+                    {
+                        a[j] = a[j -1];
+                        --j;
+                    }
+                }
+                a[j] = temp;
             }
-            a[j] = tmp;     //插入到合适的位置
         }
     }
 
     public static void main(String[] args)
     {
-        Integer[] a = {34, 8, 64, 51, 32, 21};
+        int[] a = {34, 8, 64, 51, 32, 21};
         insertSort(a);
         for (Integer i : a)
             System.out.print(i + "  ");
