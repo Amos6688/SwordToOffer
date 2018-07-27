@@ -15,8 +15,10 @@ public class MinDistance
      *  可以求出最近一次遍历到n1与n2的距离。
      *  定义一个变量min_dist记录n1与n2的最小距离，在以上两种情况下，每次求出n1与n2的距离与min_dist相比，求最小值。
      *  这样只需对数组进行一次遍历就可以求出最小距离
-     * @param a
-     * @return
+     * @param a 传入给定数组
+     * @param n1 给出n1
+     * @param n2 给出n2
+     * @return 返回n1和n2的最小距离
      */
     public static int getMinDistance(int[] a, int n1, int n2)
     {
